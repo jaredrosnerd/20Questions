@@ -1,7 +1,8 @@
 # 20Questions
 -------------
 
-Authors: Jared Rosner, Eric Last
+Authors: Jared Rosner, Eric Last.
+
 Instructions: Run Skeleton.py to play. In-game instructions are included.
 
 Description: After completing my first CS course at UC Berkeley, I thought it might be fun to make a simple 20 Questions game using
