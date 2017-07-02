@@ -1,0 +1,43 @@
+tiger land mammal legs whiskers 
+goldfish pet fish
+bettaFish pet fish fight
+blueTang pet fish blue spots
+hammerheadShark fish hammer
+greatWhiteShark fish
+blueWhale mammal blue whale
+lion land mammal legs safari whiskers
+bear land mammal legs
+leopard land mammal legs safari whiskers spots
+eagle land wings
+bat land wings nocturnal
+chicken land wings pet herbivore farm
+dog land mammal pet legs
+cat land mammal pet legs whiskers
+wolf land mammal legs nocturnal
+sheep land mammal legs herbivore horns farm
+frog legs
+turtle pet legs shell
+spider land insect webs
+ant land insect
+lizard land legs
+bee land wings insect 
+fly land wings insect
+giraffe land mammal herbivore legs safari spots
+horse land mammal pet herbivore legs farm
+pig land mammal herbivore legs farm
+cow land mammal herbivore legs horns spots farm
+chameleon land pet legs
+shrimp herbivore
+monkey land mammal
+seal mammal legs whiskers
+walrus mammal legs whiskers horns cold
+elephant land mammal herbivore legs safari horns
+penguin land wings cold
+dolphin mammal blue
+hippopotamus mammal legs herbivore land safari
+gerbil mammal legs herbivore land pet whiskers
+gecko legs land pet
+snake land pet
+cheetah legs mammal land safari whiskers spots
+orca mammal whale
+ostrich legs wings land safari
