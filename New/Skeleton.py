@@ -1,5 +1,6 @@
-"""Please enjoy playing this 20 Questions game :)"""
+"""20 Questions Game!!!"""
 import sys
+
 
 class Answer:
     def __init__(self, name, qualities):
@@ -49,20 +50,21 @@ def best_question(answer_list, question_list):
         index += 1
     return question_list[bestvar]
 
+traits = []
 def start_game():
-    answer_list = load_answers()
-    question_list = load_questions()
-    for answer in answer_list:
-        answer.option = True
-    play(answer_list, question_list)
+	answer_list = load_answers()
+	question_list = load_questions()
+	for answer in answer_list:
+	    answer.option = True
+	play(answer_list, question_list)
 
 def play(answer_list, question_list):
     if len(answer_list) == 1:
         userchoice = input(answer_list[0].correct())
-        if userchoice == 'yes' or 'y' or 'yee':
+        if userchoice == 'yes' or userchoice == 'y' or userchoice =='yee':
             print('yay!')
         else:
-            print(':(')
+            add_answer()
         return
     current_question = best_question(answer_list, question_list)
     answered = False
@@ -73,6 +75,7 @@ def play(answer_list, question_list):
             return
         elif response == 'yes' or response == 'y' or response == 'yee':
             answered = True
+            traits.append(current_question.term)
             for answer in answer_list:
                 for quality in answer.qualities:
                     if current_question.term == quality:
@@ -87,8 +90,9 @@ def play(answer_list, question_list):
                 if include:
                     new_list.append(answer)
         else:
-            print('Please answer with yes or no :)')
+            print('Please answer with yes or no >W<')
     play(new_list, question_list)
+    #add new answer to database using current_question and response variables
 
 
 def load_answers():
@@ -97,6 +101,7 @@ def load_answers():
     for line in answer_text:
         words = line.split()
         answer_list.append(Answer(words[0], words[1:]))
+    answer_text.close()
     return answer_list
 
 def load_questions():
@@ -105,7 +110,18 @@ def load_questions():
     for line in question_text:
         words = line.rsplit(' ', 1)
         question_list.append(Question(words[1][:-2], words[0]))
+    question_text.close()
     return question_list
+
+def add_answer():
+	answers = open("animals.txt","a")
+	newEntry = input('What were you thinking of?(please write as one word)')
+	str1 = ""
+	for trait in traits:
+		str1 = str1 + trait + " "
+	answers.write(" \n{} {}".format(newEntry, str1))
+	print(str(newEntry), 'has been added to the database')
+	answers.close()
 
 def main(args):
     input("Welcome to 20 Questions!\nThink of an animal and press enter when ready.")
@@ -114,3 +130,5 @@ def main(args):
 
 if __name__ == "__main__":
     main(sys.argv)
+
+#this is pretty broken rn i'm working on itz

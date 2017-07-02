@@ -40,4 +40,5 @@ gecko legs land pet
 snake land pet
 cheetah legs mammal land safari whiskers spots
 orca mammal whale
-ostrich legs wings land safari
+ostrich legs wings land safari 
+alligator legs 
