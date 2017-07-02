@@ -1,3 +1,6 @@
+"""Please enjoy playing this 20 Questions game :)"""
+import sys
+
 class Answer:
     def __init__(self, name, qualities):
         assert type(name) is str
@@ -20,18 +23,6 @@ class Question:
 
     def __str__(self):
         return '{0} {1}?'.format(self.phrase, self.term)
-
-    # def yescheck(self, answer):
-    #     for quality in answer.qualities:
-    #         print(quality, self.term)
-    #         if self.term == quality:
-    #             answer.option = True
-    #             return
-    #     answer.option = False
-    #
-    # def nocheck(self, answer):
-    #     if self.term in answer.qualities:
-    #         answer.option = False
 
 def create_matrix(answer_list, question_list):
     matrix = []
@@ -58,13 +49,6 @@ def best_question(answer_list, question_list):
         index += 1
     return question_list[bestvar]
 
-# def create_reduced_list(answer_list):
-#     new_list = []
-#     for answer in answer_list:
-#         if answer.check_option():
-#             new_list.append(answer)
-#     return new_list
-
 def start_game():
     answer_list = load_answers()
     question_list = load_questions()
@@ -82,20 +66,6 @@ def play(answer_list, question_list):
         return
     current_question = best_question(answer_list, question_list)
     answered = False
-    # while not answered:
-    #     response = raw_input(str(current_question))
-    #     if response == 'endgame':
-    #         return
-    #     if response == 'yes' or 'y' or 'yee':
-    #         answered = True
-    #         for answer in answer_list:
-    #             current_question.yescheck(answer)
-    #     if response == 'no' or 'n' or 'nah':
-    #         answered = True
-    #         for answer in answer_list:
-    #             current_question.nocheck(answer)
-    #     else:
-    #         print('answer with yes or no')
     new_list = []
     while not answered:
         response = input(str(current_question))
@@ -117,9 +87,8 @@ def play(answer_list, question_list):
                 if include:
                     new_list.append(answer)
         else:
-            print('Please answer with yes or no >W<')
+            print('Please answer with yes or no :)')
     play(new_list, question_list)
-    #add new answer to database using current_question and response variables
 
 
 def load_answers():
@@ -138,5 +107,10 @@ def load_questions():
         question_list.append(Question(words[1][:-2], words[0]))
     return question_list
 
+def main(args):
+    input("Welcome to 20 Questions!\nThink of an animal and press enter when ready.")
+    print("Answer the questions with yes or no and respond endgame if you wish to exit the game.")
+    start_game()
 
-#will need addquestion and addanswer functions
+if __name__ == "__main__":
+    main(sys.argv)
